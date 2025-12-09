@@ -99,9 +99,9 @@ def _parse_with_groq(raw_text: str, assignment_file: str, schedule_start: date, 
 
             # 3️⃣ 丟給 Pydantic 解析
             difficulty_result = DifficultyResult.model_validate_json(json_str)  # 使用 Pydantic 的 JSON 解析功能
-            #print("==================== 難度解析結果 ====================")
-            #print(difficulty_result)
-            #print("====================================================")
+            print("==================== 難度解析結果 ====================")
+            print(difficulty_result)
+            print("====================================================")
 
             if difficulty_result.past_tasks or difficulty_result.todos:
                 lines = []

@@ -268,8 +268,8 @@ if st.button("生成排程"):  # 建立一個按鈕，按下時執行以下區�
 if st.session_state["parsed"] is not None:  # 若已經有解析結果
     parsed = st.session_state["parsed"]  # 取出解析結果物件
 
-    #st.subheader("LLM 解析結果（debug 用，可之後關掉）")  # Debug 用的小標題
-    #st.json(parsed.model_dump(), expanded=False)  # 將 Pydantic 模型轉成 dict 再以 JSON 顯示
+    st.subheader("LLM 解析結果（debug 用）")  # Debug 用的小標題
+    st.json(parsed.model_dump(), expanded=False)  # 將 Pydantic 模型轉成 dict 再以 JSON 顯示
 
     # 🔶 額外：找出「逾期任務」（deadline <= 現在）
     now = datetime.now()  # 取得現在時間（含日期與時間）
